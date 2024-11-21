@@ -116,11 +116,11 @@ class Launcher
 	 * Start new Chrome process.
 	 *
 	 * @param ContextInterface $ctx
-	 * @param array ...$args
+	 * @param string ...$args
 	 * @return ProcessInstance
 	 * @throws \Exception
 	 */
-	public function launch(ContextInterface $ctx, ...$args): ProcessInstance
+	public function launch(ContextInterface $ctx, string ...$args): ProcessInstance
 	{
 		if ($this->executable) {
 			$executable = $this->executable;
@@ -169,11 +169,11 @@ class Launcher
 	/**
 	 * @param ContextInterface $ctx
 	 * @param string $executable
-	 * @param array ...$args
+	 * @param string ...$args
 	 * @return ProcessInstance
 	 * @throws \Exception
 	 */
-	private function launchWithExecutable(ContextInterface $ctx, string $executable, ...$args): ProcessInstance
+	private function launchWithExecutable(ContextInterface $ctx, string $executable, string ...$args): ProcessInstance
 	{
 		$args = array_unique(array_merge(static::$defaultArgs, $args));
 
